@@ -1,7 +1,7 @@
 services:
   # The postgres database.
   db:
-    image: postgres:15-alpine
+    image: postgres:16
     restart: always
     env_file:
       - ./middleware.env
@@ -27,7 +27,7 @@ services:
 
   # The redis cache.
   redis:
-    image: redis:6-alpine
+    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/valkey/valkey:8
     restart: always
     environment:
       REDISCLI_AUTH: ${REDIS_PASSWORD:-difyai123456}
